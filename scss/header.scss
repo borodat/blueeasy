@@ -6,10 +6,89 @@ body {
   min-width: 320px;
   position: relative;
   line-height: 1.6;
-  font-family: "RobotoRegular", sans-serif;
+  font-family: "SegoeUI", sans-serif;
   overflow-x: hidden;
 }
 
 .hidden {
   display: none;
+}
+
+h1, h2, h3, h4 {
+  text-transform: uppercase;
+}
+
+h1 {
+  color: $white;
+  font-size: rem(30);
+  span {
+    color: $accent-color;
+  }
+}
+
+h2 {
+  font-weight: 100;
+  text-align: center;
+  color: $white;
+  font-size: rem(42);
+}
+
+h3 {
+  font-weight: 100;
+  font-size: rem(30);
+}
+
+p {
+  font-size: rem(12);
+  font-weight: 600;
+}
+
+nav {
+  .active {
+    border: 2px solid $accent-color;
+    a {
+      color: $accent-color;
+    }
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: right;
+    li {
+      display: inline-block;
+      margin-left: 15px;
+      a {
+        font-size: rem(14);
+        text-transform: uppercase;
+        font-weight: bold;
+        display: block;
+        color: $white;
+        padding: 5px 15px;
+        &:hover,
+        &:focus {
+          color: $accent-color;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+header {
+  background:#515f68 url('../img/header.jpg') no-repeat ;
+  background-size: cover;
+  background-blend-mode: luminosity;
+}
+
+.topline {
+  background: rgba(81,95,104, 0.85);
+}
+
+.section-accent {
+  background-color: $accent-color;
+  color: $white;
+  p {
+    color: $white;
+  }
 }
