@@ -7,11 +7,16 @@ body {
   position: relative;
   line-height: 1.6;
   font-family: "SegoeUI", sans-serif;
+  color: $dark-blue;
   overflow-x: hidden;
 }
 
 .hidden {
   display: none;
+}
+
+.pull-right {
+  float: right;
 }
 
 h1, h2, h3, h4 {
@@ -21,26 +26,68 @@ h1, h2, h3, h4 {
 h1 {
   color: $white;
   font-size: rem(30);
+  line-height: rem(30);
+  margin: 0;
   span {
     color: $accent-color;
   }
 }
 
 h2 {
+  font-family: "SegoeUIL", sans-serif;
   font-weight: 100;
+  margin: 6px 0;
+  padding: 0 18px;
   text-align: center;
   color: $white;
   font-size: rem(42);
+  background: rgba(81,95,104, 0.85);
+  display: inline-block;
+  position: relative;
 }
 
 h3 {
+  font-family: "SegoeUIL", sans-serif;
   font-weight: 100;
   font-size: rem(30);
+  margin-top: 0;
+  position: relative;
+  &::after {
+    content: '';
+    display: block;
+    width: 45px;
+    height: 2px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: $dark-blue;
+  }
+}
+
+h4 {
+  font-family: "SegoeUISB", sans-serif;
+  font-weight: normal;
+  font-size: rem(24);
+  margin: 5px 0 5px;
 }
 
 p {
-  font-size: rem(12);
-  font-weight: 600;
+  font-size: rem(14);
+  line-height: rem(24);
+  margin-bottom: 20px;
+}
+
+a {
+  color: $accent-color;
+  transition: all 0.3s ease;
+  &:hover {
+    color: $dark-blue;
+    text-decoration: none;
+  }
+}
+
+img {
+  max-width: 100%;
 }
 
 nav {
@@ -57,14 +104,16 @@ nav {
     text-align: right;
     li {
       display: inline-block;
-      margin-left: 15px;
+      margin-left: 8px;
       a {
         font-size: rem(14);
+        line-height: rem(14);
         text-transform: uppercase;
         font-weight: bold;
         display: block;
         color: $white;
-        padding: 5px 15px;
+        padding: 9px 18px;
+        transition: all 0.3s ease;
         &:hover,
         &:focus {
           color: $accent-color;
@@ -75,19 +124,54 @@ nav {
   }
 }
 
+.main-nav {
+  position: relative;
+  left: 20px;
+}
+
+
 header {
-  background:#515f68 url('../img/header.jpg') no-repeat ;
+  background: $dark-blue url('../img/header.jpg') no-repeat ;
   background-size: cover;
   background-blend-mode: luminosity;
 }
 
+section {
+  padding: 67px 0 65px;
+}
+
 .topline {
   background: rgba(81,95,104, 0.85);
+  padding-top: 58px;
+  padding-bottom: 57px;
+}
+
+.lead {
+  text-align: center;
+  padding-top: 242px;
+  padding-bottom: 248px;
 }
 
 .section-accent {
   background-color: $accent-color;
+}
+
+.service {
+  margin-top: 10px;
+  p {
+    font-family: "SegoeUISB", sans-serif;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-size: rem(12);
+    line-height: rem(18);
+  }
+}
+
+.dark {
   color: $white;
+  h3::after {
+    background-color: $white;
+  }
   p {
     color: $white;
   }

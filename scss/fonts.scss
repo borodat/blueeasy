@@ -1,4 +1,6 @@
 @import "bourbon";
 
-@include font-face("SegoeUI", "../fonts/SegoeUI/segoeui", $file_formats: eot woff ttf);
-@include font-face("SegoeUI", "../fonts/SegoeUI/segoeuib", bold, $file_formats: eot woff ttf);
+@include font-face("SegoeUI", "../fonts/SegoeUI/SegoeUIRegular", $file_formats: eot woff ttf);
+@include font-face("SegoeUI", "../fonts/SegoeUI/SegoeUIBold", bold, $file_formats: eot woff ttf);
+@include font-face("SegoeUISB", "../fonts/SegoeUI/SegoeUISemiBold", $file_formats: eot woff ttf);
+@include font-face("SegoeUIL", "../fonts/SegoeUI/SegoeUILight", $file_formats: eot woff ttf);

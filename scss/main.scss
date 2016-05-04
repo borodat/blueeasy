@@ -37,12 +37,155 @@ body textarea:required:valid {
 
 //Custom Styles Here
 
-p {
-    color: #111;
+.portfolio {
+  h3 {
+    margin-bottom: 65px;
+  }
+  nav {
+    margin-top: 16px;
+    position: relative;
+    left: 20px;
+    li:first-child {
+      margin-right: 27px;
+    }
+    .active {
+      a {
+        padding: 6px 15px;
+      }
+    }
+  }
+  .img-wrap {
+    width: 100%;
+    background-color: $gray;
+    position: relative;
+    margin: 15px 0;
+    &:after { //responsive square
+      content: "";
+      display: block;
+      padding-bottom: 100%;
+    }
+  }
+  .img-holder {
+    background: url(../img/portfolio-1.jpg) no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.8;
+  }
 }
 
-h4 {
-    color: green;
+.sectoion-darker {
+  background-color: $dark-blue;
+}
+
+.nav--onlight {
+  a {
+    color: $dark-blue;
+  }
+}
+
+.video-wrap {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+}
+.video-wrap iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.button {
+  border: 2px solid $dark-footer;
+  padding: 15px 38px;
+  color: $dark-footer;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: rem(14);
+  &:hover {
+    color: darken($dark-footer, 15%);
+    border-color: darken($dark-footer, 15%);
+  }
+}
+
+.twitter,
+.quote {
+  p {
+    font-family: "SegoeUIL", sans-serif;;
+    font-weight: 100;
+    font-size: rem(28);
+    line-height: rem(50);
+  }
+}
+
+.twitter {
+  a {
+    color: $white;
+    font-family: "SegoeUISB", sans-serif;
+    &:hover {
+      opacity: 0.85;
+    }
+  }
+  h3::before {
+    content:'';
+    display: block;
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    right: 0;
+    top: 0;
+    background: url(../img/twitter.svg) no-repeat center center;
+  }
+}
+
+.quote {
+  blockquote {
+    margin: 0;
+  }
+  h3::before {
+    content: '"';
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
+
+.about {
+  background:$dark-blue url('../img/about.jpg') no-repeat ;
+  background-size: cover;
+  background-blend-mode: luminosity;
+}
+
+.feedback {
+  background:$dark-blue;
+  label, input {
+    display: block;
+  }
+  input, textarea {
+    width: 100%;
+    background: transparent;
+    border: 2px solid $white;
+  }
+}
+
+.submit {
+  background-color: $accent-color;
+  border: none;
+  text-transform: uppercase;
+  font-size: rem(14);
+  font-weight: bold;
+}
+
+.footer-main {
+  background-color: $dark-footer;
 }
 
 .bounceIn {
