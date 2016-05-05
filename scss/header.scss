@@ -41,7 +41,7 @@ h2 {
   text-align: center;
   color: $white;
   font-size: rem(42);
-  background: rgba(81,95,104, 0.85);
+  background: rgba(53,63,70, 0.85);
   display: inline-block;
   position: relative;
 }
@@ -75,13 +75,15 @@ p {
   font-size: rem(14);
   line-height: rem(24);
   margin-bottom: 20px;
+  margin-top: 20px;
+  line-height: rem(24);
 }
 
 a {
   color: $accent-color;
   transition: all 0.3s ease;
   &:hover {
-    color: $dark-blue;
+    color: darken($accent-color, 15%);
     text-decoration: none;
   }
 }
@@ -129,7 +131,6 @@ nav {
   left: 20px;
 }
 
-
 header {
   background: $dark-blue url('../img/header.jpg') no-repeat ;
   background-size: cover;
@@ -141,7 +142,7 @@ section {
 }
 
 .topline {
-  background: rgba(81,95,104, 0.85);
+  background: rgba(53,63,70, 0.85);
   padding-top: 58px;
   padding-bottom: 57px;
 }

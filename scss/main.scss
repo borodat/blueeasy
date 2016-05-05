@@ -42,7 +42,7 @@ body textarea:required:valid {
     margin-bottom: 65px;
   }
   nav {
-    margin-top: 16px;
+    margin-top: 18px;
     position: relative;
     left: 20px;
     li:first-child {
@@ -66,7 +66,6 @@ body textarea:required:valid {
     }
   }
   .img-holder {
-    background: url(../img/portfolio-1.jpg) no-repeat;
     background-size: cover;
     width: 100%;
     height: 100%;
@@ -75,6 +74,38 @@ body textarea:required:valid {
     left: 0;
     opacity: 0.8;
   }
+}
+
+.img-holder-1 {
+  background: url(../img/portfolio-1.jpg) no-repeat;
+}
+
+.img-holder-2 {
+  background: url(../img/portfolio-2.jpg) no-repeat;
+}
+
+.img-holder-3 {
+  background: url(../img/portfolio-3.jpg) no-repeat;
+}
+
+.img-holder-4 {
+  background: url(../img/portfolio-4.jpg) no-repeat;
+}
+
+.img-holder-5 {
+  background: url(../img/portfolio-5.jpg) no-repeat;
+}
+
+.img-holder-6 {
+  background: url(../img/portfolio-6.jpg) no-repeat;
+}
+
+.img-holder-7 {
+  background: url(../img/portfolio-7.jpg) no-repeat;
+}
+
+.img-holder-8 {
+  background: url(../img/portfolio-8.jpg) no-repeat;
 }
 
 .sectoion-darker {
@@ -87,7 +118,19 @@ body textarea:required:valid {
   }
 }
 
+.sectoion-darker {
+  padding-bottom: 71px;
+  h3 {
+    margin-bottom: 33px;
+  }
+  p {
+    margin-bottom: 24px;
+  }
+}
+
 .video-wrap {
+  width: 98%;
+  margin-top: 14px;
   position: relative;
   padding-bottom: 56.25%;
   height: 0;
@@ -104,8 +147,10 @@ body textarea:required:valid {
 }
 
 .button {
+  display: inline-block;
+  margin-top: 9px;
   border: 2px solid $dark-footer;
-  padding: 15px 38px;
+  padding: 10px 40px;
   color: $dark-footer;
   text-transform: uppercase;
   font-weight: bold;
@@ -118,15 +163,21 @@ body textarea:required:valid {
 
 .twitter,
 .quote {
+  h3 {
+    margin-bottom: 25px;
+  }
   p {
     font-family: "SegoeUIL", sans-serif;;
     font-weight: 100;
     font-size: rem(28);
     line-height: rem(50);
+    margin: 0;
+    padding-left: 2px;
   }
 }
 
 .twitter {
+  padding-bottom: 66px;
   a {
     color: $white;
     font-family: "SegoeUISB", sans-serif;
@@ -134,45 +185,174 @@ body textarea:required:valid {
       opacity: 0.85;
     }
   }
-  h3::before {
-    content:'';
-    display: block;
-    position: absolute;
-    height: 20px;
-    width: 20px;
-    right: 0;
-    top: 0;
-    background: url(../img/twitter.svg) no-repeat center center;
+  h3 {
+    &::before {
+      content:'';
+      display: block;
+      position: absolute;
+      height: 26px;
+      width: 26px;
+      right: 0;
+      top: 13px;
+      background: url('../img/twitter.svg') no-repeat;
+      background-size: contain;
+    }
   }
 }
 
 .quote {
+  padding-bottom: 72px;
   blockquote {
     margin: 0;
   }
-  h3::before {
-    content: '"';
-    position: absolute;
-    right: 0;
-    top: 0;
+  h3 {
+    &::before {
+      content:'';
+      display: block;
+      position: absolute;
+      height: 26px;
+      width: 30px;
+      right: 0;
+      top: 13px;
+      background: url('../img/quotes.svg') no-repeat;
+      background-size: contain;
+    }
   }
 }
 
+cite {
+  font-style: normal;
+  font-weight: bold;
+  display: inline-block;
+  margin-top: 25px;
+  padding-left: 2px;
+  font-size: rem(14);
+}
+
 .about {
-  background:$dark-blue url('../img/about.jpg') no-repeat ;
+  background: url('../img/about.jpg') no-repeat center center;
   background-size: cover;
-  background-blend-mode: luminosity;
+  padding-top: 85px;
+  padding-bottom: 65px;
+  position: relative;
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: $dark-blue;
+    opacity: 0.6;
+    z-index: 1;
+  }
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+
+  h3 {
+    margin-bottom: 13px;
+  }
+  p {
+    margin-bottom: 25px;
+  }
+}
+
+.social {
+  padding-bottom: 105px;
+  .social-item {
+    display: inline-block;
+    margin-top: 7px;
+    margin-right: 16px;
+  }
+  a {
+    display: inline-block;
+    border: 2px solid $white;
+    line-height: 60px;
+    width: 64px;
+    text-align: center;
+    &:hover {
+      border: 2px solid $accent-color;
+      svg {
+        fill: $accent-color;
+      }
+    }
+  }
+  svg {
+    fill: $white;
+    vertical-align: middle;
+    transition: all .3s ease;
+  }
 }
 
 .feedback {
-  background:$dark-blue;
+  background: url('../img/feedback.jpg') no-repeat center center;
+  background-size: cover;
+  padding-bottom: 80px;
+  position: relative;
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: $dark-blue;
+    opacity: 0.8;
+    z-index: 1;
+  }
+  h3 {
+    margin-bottom: 34px;
+  }
+  label {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: rem(14);
+    margin-bottom: 4px;
+  }
   label, input {
     display: block;
   }
   input, textarea {
+    padding: 15px;
+    margin-bottom: 35px;
     width: 100%;
     background: transparent;
     border: 2px solid $white;
+    transition: all 0.3s ease;
+    &:focus {
+      border: 2px solid $accent-color;
+      background-color: rgba(255, 255, 255, 0.1);
+      outline: none;
+    }
+  }
+  textarea {
+    padding: 21px 15px;
+  }
+  p, a {
+    font-family: "SegoeUISB", sans-serif;
+  }
+}
+
+address {
+  font-style: normal;
+  margin-top: 29px;
+  p {
+    margin: 0;
+  }
+  a {
+    font-size: rem(14);
+    color: $white;
+    &:hover {
+      color: $accent-color;
+    }
   }
 }
 
@@ -182,10 +362,43 @@ body textarea:required:valid {
   text-transform: uppercase;
   font-size: rem(14);
   font-weight: bold;
+  padding: 18px 154px;
+  transition: all 0.3s ease;
+  &:hover {
+    background-color: darken($accent-color, 15%);
+  }
 }
 
 .footer-main {
   background-color: $dark-footer;
+  padding: 70px 0 50px;
+  p {
+    margin: 0;
+  }
+}
+
+.nav-footer {
+  position: relative;
+  right: 14px;
+  ul {
+    text-align: left;
+    li:not(:last-child) {
+      border-right: 1px solid $dark-blue;
+    }
+    li {
+      margin-left: 0;
+      a {
+        font-family: "SegoeUISB", sans-serif;
+        font-size: rem(12);
+        color: $dark-blue;
+        padding: 0 13px;
+      }
+    }
+  }
+}
+
+.copy {
+  text-align: right;
 }
 
 .bounceIn {
