@@ -25,15 +25,15 @@
   opacity: 1;
 }
 
-body input:focus:required:invalid,
-body textarea:focus:required:invalid {
-  color: #666666;
-}
-
-body input:required:valid,
-body textarea:required:valid {
-  color: #666666;
-}
+// body input:focus:required:invalid,
+// body textarea:focus:required:invalid {
+//   color: #666666;
+// }
+//
+// body input:required:valid,
+// body textarea:required:valid {
+//   color: #666666;
+// }
 
 //Custom Styles Here
 
@@ -59,10 +59,36 @@ body textarea:required:valid {
     background-color: $gray;
     position: relative;
     margin: 15px 0;
-    &:after { //responsive square
+    text-align: center;
+    overflow: hidden;
+    &::after { //responsive square
       content: "";
       display: block;
       padding-bottom: 100%;
+    }
+    &::before {
+      content: '+';
+      font-family: "SegoeUIL", sans-serif;
+      font-size: 72px;
+      line-height: 72px;
+      padding-top: 40%;
+      padding-top: calc(50% - 36px);
+      color: $white;
+      background: $dark-blue;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 30%;
+      left: 0;
+      opacity: 0;
+      z-index: 1;
+      transition: all 0.3s ease;
+    }
+    &:hover {
+      &::before {
+        top: 0;
+        opacity: 0.8;
+      }
     }
   }
   .img-holder {
@@ -149,15 +175,15 @@ body textarea:required:valid {
 .button {
   display: inline-block;
   margin-top: 9px;
-  border: 2px solid $dark-footer;
+  border: 2px solid $white;
   padding: 10px 40px;
-  color: $dark-footer;
+  color: $white;
   text-transform: uppercase;
   font-weight: bold;
   font-size: rem(14);
   &:hover {
-    color: darken($dark-footer, 15%);
-    border-color: darken($dark-footer, 15%);
+    color: $accent-color;
+    border-color: $accent-color;
   }
 }
 
@@ -327,6 +353,7 @@ cite {
     background: transparent;
     border: 2px solid $white;
     transition: all 0.3s ease;
+    color: $white;
     &:focus {
       border: 2px solid $accent-color;
       background-color: rgba(255, 255, 255, 0.1);
@@ -399,6 +426,11 @@ address {
 
 .copy {
   text-align: right;
+}
+
+//magnificPopup
+.mfp-content {
+  @include fadeIn();
 }
 
 .bounceIn {
