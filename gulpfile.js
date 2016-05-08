@@ -1,7 +1,7 @@
 var     gulp         = require('gulp'),
         sass         = require('gulp-sass'),
         autoprefixer = require('gulp-autoprefixer'),
-        cleanCSS    = require('gulp-clean-css'),
+        cleanCSS     = require('gulp-clean-css'),
         rename       = require('gulp-rename'),
         browserSync  = require('browser-sync').create(),
         concat       = require('gulp-concat'),
@@ -49,9 +49,10 @@ gulp.task('scripts', function() {
         './app/libs/animatewithsass/animate-css.js',
         './app/libs/plugins-scroll/plugins-scroll.js',
         './app/libs/magnific-popup/dist/jquery.magnific-popup.min.js',
+        './app/libs/slicknav/dist/jquery.slicknav.min.js',
         ])
         .pipe(concat('libs.js'))
-        // .pipe(uglify()) //Minify libs.js
+        .pipe(uglify()) //Minify libs.js
         .pipe(gulp.dest('./app/js/'));
 });
 

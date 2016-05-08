@@ -9,11 +9,11 @@ $(function() {
 
   //E-mail Ajax Send
   //Documentation & Example: https://github.com/agragregra/uniMail
-  $("form").submit(function() { //Change
+  $("#form").submit(function() { //Change
     var th = $(this);
     $.ajax({
       type: "POST",
-      url: "/blueeasy/mail.php", //Change
+      url: "http://soulmelone.com/blueeasy/mail.php", //Change
       data: th.serialize()
     }).done(function() {
       alert("Спасибо за отзыв!");
@@ -73,12 +73,20 @@ $(function() {
   });
 
 	//gallery menu
-	$( ".nav--gallery a" ).click(function( event ) {
-  event.preventDefault();
-	$( ".nav--gallery a" ).each(function(){
-		$(this).removeClass( "active" );
-	})
-  $( this )
-    .addClass( "active" );
-});
+	$( ".nav--gallery a, .main-nav a" ).click(function( event ) {
+    event.preventDefault();
+  	$( ".nav--gallery a, .main-nav a" ).each(function(){
+  		$(this).removeClass( "active" );
+  	})
+    $( this )
+      .addClass( "active" );
+  });
+
+  //mobile nav
+  $('#menu').slicknav({
+    label: "",
+    easingOpen: "easeInOutCubic",
+    easingClose: "easeInOutCubic",
+    duration: 300,
+  });
 });
