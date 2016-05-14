@@ -82,7 +82,8 @@ p {
 a {
   color: $accent-color;
   transition: all 0.3s ease;
-  &:hover {
+  &:hover,
+  &:focus {
     color: darken($accent-color, 15%);
     text-decoration: none;
   }
@@ -130,7 +131,7 @@ nav {
 }
 
 header {
-  background: $dark-blue url('../img/header.jpg') no-repeat ;
+  background: $dark-blue url('img/header.jpg') no-repeat ;
   background-size: cover;
   background-blend-mode: luminosity;
 }
@@ -176,35 +177,74 @@ section {
   }
 }
 
-.slicknav_menu {
-	display:none;
-  text-transform: uppercase;
-  text-align: center;
-  position: absolute;
-  top: 20px;
-  right: 0;
-  width: 100%;
-  z-index: 2;
-  background-color: transparent;
-  ul {
-    background-color: transparentize($dark-blue, 0.05);
+// слайдаут
+body {
+    width: 100%;
+    height: 100%;
   }
-  li:not(:last-child) {
-    border-bottom: 1px solid rgba(0,0,0,0.2);
+
+  .slideout-menu {
+    position: absolute;
+    left: auto;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 0;
+    width: 156px;
+    padding-right: 5px;
+    padding-top: 28px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    display: none;
+    ul {
+      li {
+        display: block;
+        &:not(:last-child){border-bottom: 1px solid $dark-blue;}
+        a {
+          color: $dark-blue;
+        }
+      }
+    }
   }
-}
 
-.slicknav_btn {
-  background-color: $dark-blue;
-}
+  .slideout-panel {
+    position:relative;
+    z-index: 1;
+    will-change: transform;
+  }
 
+  .slideout-open,
+  .slideout-open body,
+  .slideout-open .slideout-panel {
+    overflow: hidden;
+  }
+
+  .slideout-open .slideout-menu {
+    display: block;
+  }
+
+  .toggle-button {
+    display: none;
+    background-color: $white;
+    border: none;
+    width: 1.875rem;
+    height: 1.875rem;
+    font-size: 20px;
+    line-height: 20px;
+    float: right;
+    padding: 0;
+  }
+// слайдаут
 @media screen and (max-width: 768px) {
-	/* #menu is the original menu */
-	.js #menu {
-		display:none;
-	}
+  h1 {
+    float: left;
+  }
+  .main-nav {
+    display: none;
+  }
 
-	.js .slicknav_menu {
-		display:block;
-	}
+  .toggle-button {
+    display: block;
+  }
+
 }

@@ -13,7 +13,7 @@ $(function() {
     var th = $(this);
     $.ajax({
       type: "POST",
-      url: "http://soulmelone.com/blueeasy/mail.php", //Change
+      url: "http://soulmelone.com/mail.php", //Change
       data: th.serialize()
     }).done(function() {
       alert("Спасибо за отзыв!");
@@ -62,14 +62,9 @@ $(function() {
 
   $("img, a").on("dragstart", function(event) { event.preventDefault(); });
 
-  // magnific-popup
-  $('.gallery').magnificPopup({
-    type:'image',
-    gallery:{
-      enabled:true
-    },
-		removalDelay: 300,
-		mainClass: 'mfp'
+//gallery
+  $("#portfolio").lightGallery({
+    selector: '.gallery-item'
   });
 
 	//gallery menu
@@ -82,11 +77,11 @@ $(function() {
       .addClass( "active" );
   });
 
-  //mobile nav
-  $('#menu').slicknav({
-    label: "",
-    easingOpen: "easeInOutCubic",
-    easingClose: "easeInOutCubic",
-    duration: 300,
-  });
+
+  $('.animate').css('opacity', 0);
+
+  $('.animate').waypoint(function() {
+      $(this.element).addClass('fadeInUp');
+      $(this.element).css('opacity', 1);
+  }, { offset: '90%' });
 });

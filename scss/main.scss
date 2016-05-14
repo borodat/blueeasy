@@ -387,14 +387,12 @@ address {
 .submit {
   background-color: $accent-color;
   border: none;
+  text-align: center;
   text-transform: uppercase;
   font-size: rem(14);
   font-weight: bold;
   padding: 18px 154px;
   transition: all 0.3s ease;
-  @media screen and (max-width: 768px) {
-    width: 100%;
-  }
   &:hover {
     background-color: darken($accent-color, 15%);
   }
@@ -432,13 +430,14 @@ address {
   text-align: right;
 }
 
-//magnificPopup
-.mfp-content {
-  @include fadeIn();
+.fadeInUp {
+  opacity: 1;
+  @include fadeInUp();
 }
 
-.bounceIn {
-   @include bounceIn();
+.fadeinUpdeley1 {
+  opacity: 1;
+  @include fadeInUp();
 }
 
 .zoomInUp {
