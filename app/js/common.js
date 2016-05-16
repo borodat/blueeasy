@@ -63,27 +63,37 @@ $(function() {
   $("img, a").on("dragstart", function(event) { event.preventDefault(); });
 
 //galleryLightbox
-  $("#portfolio").lightGallery({
+  var $portfolio = $('#portfolio');
+  $portfolio.lightGallery({
     selector: '.gallery-item'
   });
 
 	//gallery menu
-	$( ".nav--gallery a, .main-nav a" ).click(function( event ) {
+	$( ".nav--gallery a" ).click(function( event ) {
     event.preventDefault();
 
-    //menu name = folder name for categories
-    var imgCategory = $(this).text();
-    var imgCount = 0;
-    $('.img-holder').each(function(){
-      imgCount++;
-      var categoryUrl = "url('../img/" + imgCategory + "/portfolio-" + imgCount + ".jpg')";
-      var galleryBg = $(this).css('background-image', categoryUrl);
-    });
+  //menu name = folder name for categories
+  var imgCategory = $(this).text();
+  var imgCount = 0;
+  var imgCountForA = 0;
 
-    //add and remove active class
-  	$( ".nav--gallery a, .main-nav a" ).each(function(){
-  		$(this).removeClass( "active" );
-  	})
+  //update href url for lightGallery
+  $(".gallery-item").each(function(){
+    imgCountForA++;
+    var categoryHref = "http://soulmelone.com/blueeasy/img/" + imgCategory + "/portfolio-" + imgCountForA + ".jpg";
+    $(this).attr('href', categoryHref);
+  });
+  //update background-image
+  $('.img-holder').each(function(){
+    imgCount++;
+    var categoryUrl = "url('http://soulmelone.com/blueeasy/img/" + imgCategory + "/portfolio-" + imgCount + ".jpg')";
+    $(this).css('background-image', categoryUrl);
+  });
+
+  //add and remove active class
+  $( ".nav--gallery a, .main-nav a" ).each(function(){
+    $(this).removeClass( "active" );
+  })
     $(this).addClass( "active" );
   });
 
