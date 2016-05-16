@@ -104,35 +104,35 @@
 }
 
 .img-holder-1 {
-  background: url(../img/portfolio-1.jpg) no-repeat;
+  background: url(../img/all/portfolio-1.jpg) no-repeat;
 }
 
 .img-holder-2 {
-  background: url(../img/portfolio-2.jpg) no-repeat;
+  background: url(../img/all/portfolio-2.jpg) no-repeat;
 }
 
 .img-holder-3 {
-  background: url(../img/portfolio-3.jpg) no-repeat;
+  background: url(../img/all/portfolio-3.jpg) no-repeat;
 }
 
 .img-holder-4 {
-  background: url(../img/portfolio-4.jpg) no-repeat;
+  background: url(../img/all/portfolio-4.jpg) no-repeat;
 }
 
 .img-holder-5 {
-  background: url(../img/portfolio-5.jpg) no-repeat;
+  background: url(../img/all/portfolio-5.jpg) no-repeat;
 }
 
 .img-holder-6 {
-  background: url(../img/portfolio-6.jpg) no-repeat;
+  background: url(../img/all/portfolio-6.jpg) no-repeat;
 }
 
 .img-holder-7 {
-  background: url(../img/portfolio-7.jpg) no-repeat;
+  background: url(../img/all/portfolio-7.jpg) no-repeat;
 }
 
 .img-holder-8 {
-  background: url(../img/portfolio-8.jpg) no-repeat;
+  background: url(../img/all/portfolio-8.jpg) no-repeat;
 }
 
 .sectoion-darker {
@@ -315,7 +315,9 @@ cite {
 }
 
 .feedback {
-  background: url('../img/feedback.jpg') no-repeat center center;
+  background-image: url('../img/feedback.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
   background-size: cover;
   padding-bottom: 80px;
   position: relative;

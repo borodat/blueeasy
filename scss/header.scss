@@ -227,12 +227,15 @@ body {
     display: none;
     background-color: $white;
     border: none;
-    width: 1.875rem;
-    height: 1.875rem;
-    font-size: 20px;
-    line-height: 20px;
     float: right;
-    padding: 0;
+    padding: 3px;
+    line-height: 5px;
+    height: 1.875rem;
+    border-radius: 3px;
+    svg {
+      height: 25px;
+      fill: $dark-blue;
+    }
   }
 // слайдаут
 @media screen and (max-width: 768px) {

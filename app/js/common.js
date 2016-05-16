@@ -62,7 +62,7 @@ $(function() {
 
   $("img, a").on("dragstart", function(event) { event.preventDefault(); });
 
-//gallery
+//galleryLightbox
   $("#portfolio").lightGallery({
     selector: '.gallery-item'
   });
@@ -70,11 +70,21 @@ $(function() {
 	//gallery menu
 	$( ".nav--gallery a, .main-nav a" ).click(function( event ) {
     event.preventDefault();
+
+    //menu name = folder name for categories
+    var imgCategory = $(this).text();
+    var imgCount = 0;
+    $('.img-holder').each(function(){
+      imgCount++;
+      var categoryUrl = "url('../img/" + imgCategory + "/portfolio-" + imgCount + ".jpg')";
+      var galleryBg = $(this).css('background-image', categoryUrl);
+    });
+
+    //add and remove active class
   	$( ".nav--gallery a, .main-nav a" ).each(function(){
   		$(this).removeClass( "active" );
   	})
-    $( this )
-      .addClass( "active" );
+    $(this).addClass( "active" );
   });
 
 
